@@ -58,8 +58,8 @@ function agregarEquipos()
           }
         }
       }
-    }
-    ;
+    };
+    
   peticion.send(null);
 
   document.getElementById("resultado").innerHTML=" \

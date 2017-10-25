@@ -4,7 +4,7 @@
 
 $user="postgres";
 $password= "12345";
-$dbname="pruebareque";
+$dbname="Fifa_world_cup";
 $port= "5432";
 $host= "localhost";
 
@@ -14,7 +14,7 @@ $strconn= "host=$host port=$port "
 $conn = pg_connect($strconn) or die('{"estado":0}');
 
 
-$tipo= $_REQUEST["tipo"];
+$tipo= $_REQUEST["insertar"];
 
 if($tipo=="insertar")
 {
