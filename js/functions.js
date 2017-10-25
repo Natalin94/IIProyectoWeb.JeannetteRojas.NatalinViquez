@@ -98,7 +98,7 @@ function actualizarEquipos()
         {
           if (peticion.responseText===1)
           {
-            alert ("si se pudo insertar");
+            alert ("si se pudo actualizar");
           }
         }
       }
