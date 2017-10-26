@@ -29,8 +29,7 @@ function obtenerXHR()
 }; 
 
 function agregarEquipos()
-{
-          
+{         
   var country = document.getElementById("country").value;
   var confederation = document.getElementById("confederation").value;
   var points = document.getElementById("points").value;
@@ -38,8 +37,9 @@ function agregarEquipos()
  
 
 //IMPLEMENTACION DEL PHP
-  var peticion = obtenerXHR(); 
-  url="../php/agregarEquipos.php?tipo=insertar";
+  var peticion = obtenerXHR();
+   
+  url="../IIProyectoWeb.JeannetteRojas.NatalinViquez/php/agregarEquipos.php?tipo=insertar";
   url+="&country="+country;
   url+="&confederation="+confederation;
   url+="&points="+points;
@@ -48,9 +48,9 @@ function agregarEquipos()
   peticion.open("GET", url , true); 
   peticion.onreadystatechange=function ()
     {
-      if (peticion.readyState===4)
+      if (peticion.readyState==4)
       {
-        if (peticion.status===200)
+        if (peticion.status==200)
         {
           if (peticion.responseText===1)
           {
@@ -61,7 +61,7 @@ function agregarEquipos()
     };
     
   peticion.send(null);
-
+  debugger;
   document.getElementById("resultado").innerHTML=" \
   Equipo Agregado\
   <br> idGrupo: "+country+" \

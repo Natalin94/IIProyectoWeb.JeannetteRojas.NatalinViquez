@@ -4,12 +4,11 @@
 
 $user="postgres";
 $password= "12345";
-$dbname="pruebareque";
+$dbname="Fifa_world_cup";
 $port= "5432";
 $host= "localhost";
 
-$strconn= "host=$host port=$port "
-        . "dbname=$dbname user=$user password=$password";
+$strconn= "host=$host port=$port user=$user password=$password dbname=$dbname ";
         
 $conn = pg_connect($strconn) or die('{"estado":0}');
 
@@ -24,8 +23,8 @@ if($tipo=="insertar")
 	$flag= $_REQUEST["flag"];
 	$state = $_REQUEST[true];
 
-	$query= "update teams set confederation='$confederation' where country='$country'";//probando revisar que puede modificar
-
+	//$query= "update teams set confederation='$confederation' where country='$country'";//probando revisar que puede modificar
+	$query= "update teams set points='$points', flag= '$flag' where country='$country'";
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
 
