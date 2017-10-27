@@ -90,12 +90,18 @@
                                     <form role="form" id="form1">
                                         <div class="form-group">
                                             <label>Name of country</label>
-                                            <select>
-                                              <option value="volvo">Argentina</option>
-                                              <option value="saab">Bolivia</option>
-                                              <option value="opel">Canada</option>
-                                              <option value="audi">Costa Rica</option>
-                                            </select>
+
+                                            <?php
+
+                                            echo "<select>";
+                                                while ($row = pg_fetch_row($results)) {
+                                                    echo "<option>";
+                                                    echo $row[0];
+                                                    echo "</option>";
+                                                }
+                                                echo "</select>";
+                                            ?>
+                                            
                                             <span class="input-group-btn">
                                             </span>
                                         </div>                                         

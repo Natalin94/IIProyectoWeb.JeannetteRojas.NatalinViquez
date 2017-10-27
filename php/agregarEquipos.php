@@ -23,9 +23,11 @@ if($tipo=="insertar")
 	$flag= $_REQUEST["flag"];
 	//$state = $_REQUEST[true];
 
-	$query= "insert into teams values ('$country','$confederation','$points','$flag',true)";
+	//$query= "insert into teams values ('$country','$confederation','$points','$flag',true)";
+	$query= "select * from teams";
 
 	$results= pg_query( $conn,$query) or die('{"estado":0}');
+	var_dump($results);
 
 	//echo '1';
 }
